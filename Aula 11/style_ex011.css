@@ -3,12 +3,14 @@ body {
     color: #0f0f0f;
     font: normal 15pt Arial;
     margin: 15px;
+    text-align: center;
 }
 div#card_box {
     background-color: #c6c6c6;
     width: 470px;
     height: 220px;
     border-radius: 10px;
+    margin: auto;
 }
 div#status_box {
     /* SIZE & APPEARANCE: */
@@ -25,6 +27,5 @@ div#status_box {
 }
 
 h1 {color: gold;}
-#prA {margin-left: 55px}
-#prompt {width: 200px; height: 25px; font-size: medium; margin-left: 50px;}
+#prompt {width: 200px; height: 25px; font-size: medium;}
 #btn_prompt {width: 150px; height: 30px; font-size: small;}
