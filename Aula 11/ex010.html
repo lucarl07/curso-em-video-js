@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body {
+            background-color: #dfc06d;
+            color: #ffffff;
+            font: normal 15pt Arial;
+            margin: 15px;
+        }
+        div#infobox {
+            background-color: #ddb255;
+            width: 500px;
+            height: 100px;
+            border-radius: 10px;
+        }
+        
+        .botao {width: 90px;}
+        .espaco {background-color: #ddb255; height: 15px; border-radius: 20px;}
+        .linha {background-color: white; width: 470px; height: 1px;
+            margin-left: 15px; margin-top: 10px;}
+        #txtvel {width: 130px; height: 16px;}
+        #res {font-size: 14pt; margin-left: 15px; margin-top: 10px;}
+        #s1 {font-size: 16pt; margin: 15px;}
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <div name="infobox" id="infobox">
+        <div class="espaco"></div>
+        <strong id="s1">Velocidade do carro:</strong> <input type="number" name="txtvel" id="txtvel">
+        <input class="botao" type="button" value="Verificar" onclick="calcular()">
+        <div class="linha"></div>
+        <div id="res">Digite a velocidade no campo acima.</div>
+    </div>
+    <script>
+        function calcular() {
+            var stringVel = document.querySelector('input#txtvel') // Entrada no elemento #txtvel;
+            var res = document.querySelector('div#res')            // Bloco #res de exibiçaõ do resultado;
+            var vel = Number(stringVel.value)                      // Variável number do conteúdo do elemento #txtvel;
+
+            var infobox = document.querySelector('div#infobox') // Variável para a caixa dos conteúdos;
+            var ultrapassar = false                             // Indica se o usuário ultrapassou ou não o limite de velocidade;
+            
+            if(vel > 60) 
+            { // (vel > 60) Caso verdadeiro, a infobox é modificada para caber o texto.
+                infobox.style.height = '180px'
+                ultrapassar = true
+            } else
+            { // (vel > 60)
+                infobox.style.height = '140px'
+                ultrapassar = false
+            }
+
+            res.innerHTML = `Sua velocidade atual é de <strong>${vel}Km/h</strong>.`
+            if (ultrapassar == true) 
+            { // (vel > 60) Caso verdadeiro, emitir mensagem sobre multa de utrapassagem.
+                res.innerHTML += `<p>Você foi <strong>MULTADO</strong> por excesso de velocidade.</p>`
+            }
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+body {
+    background-color: #8fbc8f;
+    color: #0f0f0f;
+    font: normal 15pt Arial;
+    margin: 15px;
+}
+div#card_box {
+    background-color: #c6c6c6;
+    width: 470px;
+    height: 220px;
+    border-radius: 10px;
+}
+div#status_box {
+    /* SIZE & APPEARANCE: */
+    background-color: #7ba0a5;
+    color: #ffffff;
+    width: 360px;
+    height: 50px;
+    border-radius: 10px;
+    /* ALIGNMENT: */
+    margin-top: 10px;
+    margin-left: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+h1 {color: gold;}
+#prA {margin-left: 55px}
+#prompt {width: 200px; height: 25px; font-size: medium; margin-left: 50px;}
+#btn_prompt {width: 150px; height: 30px; font-size: small;}

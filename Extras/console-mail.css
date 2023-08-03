@@ -1,0 +1,19 @@
+/* TO DO: Preciso decorar mais essa página... */
+body {
+    font: normal 16pt Arial;
+}
+input {
+    font: normal 14pt Arial;
+}
+p#sentMsg {
+    font: normal 13pt Arial;
+}
+div#bt002 {
+    font: normal 16pt Arial;
+    background: rgb(36, 36, 36);
+    color: white;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}

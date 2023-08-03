@@ -1,0 +1,24 @@
+body {background: #9d96a0; font: normal 16pt Arial;}
+
+#cabeçalho {
+    color: white; 
+    text-align: center;}
+#conteúdo {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+#rodapé {
+    color: white; 
+    text-align: center; 
+    font-style: italic;
+}
+
+div#res {text-align: center; font: normal 16pt Arial;}
+img#foto {
+    font: normal 11pt Arial; text-align: center;
+    border-radius: 250px; display: block; margin: auto; padding: 10px;
+}

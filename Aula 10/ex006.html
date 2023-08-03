@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#botao {
+            font: normal 20pt Arial;
+            background: rgb(89, 151, 89);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="botao">
+        Interaja...
+    </div>
+    <script>
+        var area = window.document.querySelector('div#botao')
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', mouseEntrar)
+        area.addEventListener('mouseout', mouseSair)
+
+        function clicar() {
+            // Função ativada caso o usuário clique no botão.
+            
+            area.innerText = 'Fui clicado!'
+            area.style.background = 'rgb(151, 89, 89)'
+            /* PROBLEMA A RESOLVER:
+               area.style.font = 'bold 20pt Arial'
+               - Fazer a expressão acima funcionar. */
+        }
+        function mouseEntrar() {
+            // Função ativada caso o usuário passe o mouse por cima do botão.
+            area.innerText = 'Clica aqui :P'
+            area.style.background = 'rgb(74, 136, 74)'
+        }
+        function mouseSair() {
+            // Função ativada caso o usuário retire o mouse do botão.
+            area.innerText = 'Interaja...'
+            area.style.background = 'rgb(89, 151, 89)'
+        }
+    </script>
+</body>
+</html>

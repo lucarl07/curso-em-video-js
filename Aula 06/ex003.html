@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Outro script da aula 06!</title>
+    <style>
+        body /* Visual do corpo da aplicação */ {
+            background-color: #c56464;
+            color: #fafafa;
+            font: normal 20pt Arial; 
+        }
+        h1 /* Visual do primeiro título */ {
+            color: #f5dd07;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1> <!-- Título de primeira ordem -->
+    <p>Lorem ipsum dolor sit amet.</p> <!-- Parágrafo -->
+    <script>
+        var st1 = window.prompt('Digite um número: ')
+        var n1 = Number(st1)
+
+        var n2 = Number.parseInt(window.prompt('Digite outro número: '))
+        var st2 = String(n2)
+
+        var conc = st1 + st2, soma = n1 + n2
+        window.confirm(`A soma entre ${st1} e ${st2} é ${conc}`) // No caso ao lado, o + foi usado para concatenar dois termos.
+        /* O + pode servir também para adição. Então, como que apareceu n1 E n2,
+        um do lado do outro? É simples, o JS tratou o + como concatenação pelo resul-
+        tado ser uma string.
+
+        • Funciona da seguinte forma:
+            (number + number) = adição
+            (string + string) = concatenação
+        */
+       
+        window.alert(`Brincadeira, eu sei que é ${soma}`)
+        /* Podemos ver que, utilizando o comando Number(n), assim como Number.parseInt(n)
+        e Number.parseFloat(n) para números inteiros e reais respectivamente, conseguimos 
+        fazer com que o JS entenda que o que colocamos no prompt não são strings, e sim 
+        números.*/
+
+        /* NOTA - Formatação de Strings:
+        Considerando que var s = 'Javascript',
+
+        Para fazer interpolação:
+        • 'Eu estou aprendendo s'      // não faz interpolação
+        • 'Eu estou aprendendo' + s    // usa concatenação
+        • `Eu estou aprendendo ${s}`   // usa template string
+        
+        Alguns atributos:
+        s.length                       // Quantos caracteres a string tem
+        s.toUpperCase()                // Mudar todos as letras para 'MAIÚSCULAS'
+        s.toLowerCase()                // Mudar todos as letras para 'MINÚSCULAS'
+        */
+    </script>
+</body>
+</html>

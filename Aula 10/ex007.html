@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+    <style>
+        body {
+            font: normal 16pt Arial;
+            background-color: rgb(107, 136, 189);
+            color: #FAFAFA;
+        }
+        input {
+            font: normal 16pt Arial;
+            width: 150px;
+        }
+        div#res_sum {
+            background-color: rgb(87, 116, 169);
+            width: 495px;
+            height: 50px;
+            margin-top: 15px;
+            line-height: 50px;
+            text-align: center;
+        }
+        div#res_subt {
+            background-color: rgb(87, 116, 169);
+            width: 495px;
+            height: 50px;
+            margin-top: 15px;
+            line-height: 50px;
+            text-align: center;
+        }
+        div#res_mult {
+            background-color: rgb(87, 116, 169);
+            width: 495px;
+            height: 50px;
+            margin-top: 15px;
+            line-height: 50px;
+            text-align: center;
+        }
+        div#res_divs {
+            background-color: rgb(87, 116, 169);
+            width: 495px;
+            height: 50px;
+            margin-top: 15px;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora Básica</h1>
+    <!-- SOMA: -->
+    <p id="op01"><strong>SOMA:</strong></p>
+    <input type="number" name="Texto-1" id="txtn1"> +
+    <input type="number" name="Texto-2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res_sum">Aqui aparecerá o <strong>resultado</strong>...</div>
+    <script>
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var res = window.document.getElementById('res_sum')
+            
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var sum = n1 + n2
+            
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${sum}</strong>`
+        }
+    </script>
+
+    <!-- SUBTRAÇÃO: -->
+    <p id="op02"><strong><br/>SUBTRAÇÃO:</strong></p>
+    <input type="number" name="Texto-3" id="txtn3"> -
+    <input type="number" name="Texto-4" id="txtn4">
+    <input type="button" value="Subtrair" onclick="subtrair()">
+    <div id="res_subt">Aqui aparecerá o <strong>resultado</strong>...</div>
+    <script>
+        function subtrair() {
+            var tn3 = window.document.querySelector('input#txtn3')
+            var tn4 = window.document.querySelector('input#txtn4')
+            var res = window.document.querySelector('div#res_subt')
+            
+            var n3 = Number(tn3.value)
+            var n4 = Number(tn4.value)
+            var subt = String(n3 - n4)
+
+            res.innerHTML = `A subtração entre ${n3} e ${n4} é igual a <strong>${subt}</strong>`
+        }
+    </script>
+
+    <!-- MULTIPLICAÇÃO -->
+    <p id="op03"><strong><br/>MULTIPLICAÇÃO:</strong></p>
+    <input type="number" name="Texto-5" id="txtn5"> x
+    <input type="number" name="Texto-6" id="txtn6">
+    <input type="button" value="Multiplicar" onclick="multiplicar()">
+    <div id="res_mult">Aqui aparecerá o <strong>resultado</strong>...</div>
+    <script>
+        function multiplicar() {
+            var tn5 = window.document.getElementById('txtn5')
+            var tn6 = window.document.getElementById('txtn6')
+            var res = window.document.getElementById('res_mult')
+            
+            var n5 = Number(tn5.value)
+            var n6 = Number(tn6.value)
+            var mult = String(n5 * n6)
+            
+            res.innerHTML = `O produto de ${n5} por ${n6} é igual a <strong>${mult}</strong>`
+        }
+    </script>
+
+    <!-- DIVISÃO -->
+    <p id="op04"><strong><br/>DIVISÃO:</strong></p>
+    <input type="number" name="Texto-7" id="txtn7"> ÷
+    <input type="number" name="Texto-8" id="txtn8">
+    <input type="button" value="Dividir" onclick="dividir()">
+    <div id="res_divs">Aqui aparecerá o <strong>resultado</strong>...</div>
+    <script>
+        function dividir() {
+            var tn7 = document.querySelector('input#txtn7')
+            var tn8 = document.querySelector('input#txtn8')
+            var res = document.querySelector('div#res_divs')
+
+            var n7 = Number(tn7.value)
+            var n8 = Number(tn8.value)
+            var divs = String(n7/n8)
+
+            if(n8 != 0) {
+                res.innerHTML = `O quociente de ${n7} e ${n8} é <strong>${divs}</strong>`
+            } else {
+                res.innerHTML = `0 como divisor dá resultados indefinidos.`
+            }
+        }
+    </script>
+</body>
+</html>

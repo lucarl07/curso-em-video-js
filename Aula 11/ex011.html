@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual sua nacionalidade?</title>
+    <link rel="stylesheet" href="style_ex011.css">
+</head>
+<body>
+    <h1>Identificador de Nacionalidade</h1>
+    <div id="card_box">
+        <br/> 
+        <p id="prA">Por favor, digite qual é o seu país natal:</p>
+        <input id="prompt" type="text"> <!-- LEMBRETE: Adicionar evento 'keydown' -->
+        <input id="btn_prompt" type="button" value="Verificar nacionalidade" onclick="verStatusN()">
+        <div id="status_box"><strong>(Seu status de nacionalidade aqui)</strong></div>
+    </div>
+    <script>
+        function verStatusN() { // Função caso o elemento 'click' seja disparado:
+            var país = document.querySelector('input#prompt').value
+            /* DIV MAIOR: */ var card = document.querySelector('div#card_box')
+            /* DIV MENOR: */ var statusN = document.querySelector('div#status_box')
+
+            /* Ajuste de tamanho nas divs: */
+            statusN.style.height = '100px'
+            card.style.height = '260px'
+
+            if (país == 'brasil' || país == 'Brasil')
+            { // Mensagem confirmando a nacionalidade brasileira e trocando a cor do div menor para verde.
+                statusN.style.background = '#6bb66b'
+                statusN.innerHTML = `Seu país natal é: <strong>${país}</strong>. <br/>Você é brasileiro!`
+            } else
+            { // Mensagem classificando o usuário como estrangeiro e trocando a cor do div menor para dourado.
+                statusN.style.background = '#e6b450'
+                statusN.innerHTML = `Seu país natal é: <strong>${país}</strong>. <br/>Você é estrangeiro!`
+            }
+        }
+    </script>
+</body>
+</html>

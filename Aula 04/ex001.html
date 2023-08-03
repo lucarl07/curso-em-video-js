@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Meu primeiro (só que não) script</title>
+    <style>
+        body {
+            background-color: #c56464;
+            color: #fafafa;
+            font: normal 20pt Arial; 
+        }
+        h1 {
+            color: #f5dd07;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Me livrei da maldição!!</p>
+    <script>
+        window.alert('@Verificados genshin ganhou de sonic') // Alerta na tela do navegador
+        if(window.confirm('Enviar resposta?')) 
+        { // Laço if-else: caso o usuário clique em "OK" na janela de confirmação:
+            let answer = prompt("Mensagem:"); // Variável answer que armazenará o input
+            if(answer === 'fake') {
+                window.alert('Mensagem não permitida, por favor reenviar.')
+            } else {
+            window.alert('Mensagem enviada com sucesso!')
+            }
+        }
+    </script>
+</body>
+</html>

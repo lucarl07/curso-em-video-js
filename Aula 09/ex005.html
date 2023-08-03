@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: #67b695;
+            color: white;
+            font: normal 16pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p class="Paragraph">Aqui vai o resultado</p>
+    <p class="Paragraph">Aprendendo a usar o <strong>DOM (Document Object Model)</strong> em Javascript</p>
+    <div id="msg">Clique em mim!</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = document.getElementsByTagName('p')[0]
+        p1.style.color = 'rgb(0, 0, 255)'
+        /* corpo.style.background = '#1f1f1f' 
+           document.write(p1.innerHTML) */
+        
+        /* var d = document.getElementById('msg') */
+        var d = document.querySelector('div#msg') // Query Selector; ID = # e Classe = .
+        d.style.background = 'rgb(255, 150, 50)'
+        d.innerText = "Olaaaa :wave:"
+
+        var soTrueNets = window.navigator.appName = 'Netscape'? ' (so true)':''
+        window.document.write(`<br/> Charset da página: ${window.document.charset} <br/>`)
+        window.document.write(`URL: ${window.document.URL} <br/>`)
+        window.document.write(`Navegador: ${window.navigator.appName}${soTrueNets}`)
+        
+        var p2 = document.getElementsByClassName('Paragraph')[1]
+        p2.style.color = 'pink'
+    </script>
+</body>
+</html>
