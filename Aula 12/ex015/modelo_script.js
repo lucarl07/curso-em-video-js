@@ -1,16 +1,16 @@
 function verificar() {
-    var data = new Date()
-    var ano = data.getFullYear()
-    var formAno = document.getElementById('txtano')
-    var res = document.querySelector('div#res')
+    let data = new Date()
+    let ano = data.getFullYear()
+    let formAno = document.getElementById('txtano')
+    let res = document.querySelector('div#res')
 
     if(formAno.value.length == 0 || Number(formAno.value) > ano) {
         alert('[ERRO 404] Verifique os dados e tente novamente!')
     } else {
-        var fsex = document.getElementsByName('radsex')
-        var idade = ano - Number(formAno.value)
-        var gênero = ''
-        var img = document.querySelector('img#foto')
+        let fsex = document.getElementsByName('radsex')
+        let idade = ano - Number(formAno.value)
+        let gênero = ''
+        let img = document.querySelector('img#foto')
 
         if(fsex[0].checked) {
             gênero = 'um homem'
