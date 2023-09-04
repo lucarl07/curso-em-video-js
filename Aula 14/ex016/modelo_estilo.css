@@ -4,16 +4,12 @@ body {
     font: normal 15pt Arial;
 }
 
-header {
+header, h3 {
     color: white;
     text-align: center;
 }
 
-input {
-    width: 200px;
-}
-
-#conteúdo {
+#contador_PA {
     background: white;
     border-radius: 10px;
     padding: 20px;
@@ -22,21 +18,31 @@ input {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
+input {
+    width: 200px;
+}
+
 #input_inicio { margin-left: 11px; }
 #input_fim { margin-left: 25px; }
 #input_passo { margin-left: 4px; }
 
-#botao {
+.botao {
     background-image: linear-gradient(to right, #8554f7, #5675ff);
     color: white;
     border-width: 0px;
     border-radius: 8px;
-    width: 160px;
-    height: 40px;
     font-size: 12pt;
 }
 
-#rodapé {
+#botao01 { height: 40px; width: 160px; }
+#botao02 { height: 35px; margin-left: 15px; width: 180px;}
+ 
+select {
+    width: 180px;
+    height: 150px;
+}
+
+footer {
     color: white;
     text-align: center;
     /* font-style: italic; */

@@ -9,27 +9,54 @@
 <body>
     <header id="título">
         <h1>Vamos contar?</h1>
-        <h3>Contador em Progressão Aritmética</h3>
+        <h3>Contador em Progressão Aritmética:</h3>
     </header>
-    <section id="conteúdo">
+
+    <section id="contador_PA">
         <div>
             <p>
-                Início: <input type="number" name="" id="input_inicio">
+                Início: <input type="number" name="input_inicio" id="input_inicio">
             </p>
             <p>
-                Fim: <input type="number" name="" id="input_fim">
+                Fim: <input type="number" name="input_fim" id="input_fim">
             </p>
             <p>
-                Passo: <input type="number" name="" id="input_passo">
+                Passo: <input type="number" name="input_passo" id="input_passo">
             </p>
             <p>
-                <input type="button" value="Calcular sequência" id="botao" onclick="executar()" onmouseenter="mouseEntraBotao()" onmouseout="mouseSaiBotao()">
+                <input type="button" value="Calcular sequência" class="botao" id="botao01"
+                onclick="execContador()" onmouseenter="mouseEntra01()" onmouseout="mouseSai01()">
             </p>
         </div>
-        <div id="resultado">
+        <div id="cont_resultado">
             Clique no botão acima...
         </div>
     </section>
+
+    <h3>Tabuada até 10:</h3> <section id="contador_PA">
+        <div>
+            <p>
+                Número: <input type="number" name="input_numero" id="input_numero">
+                <input type="button" value="Calcular tabuada" class="botao" id="botao02"
+                onclick="execTabuada()" onmouseenter="mouseEntra02()" onmouseout="mouseSaiBotao()">
+            </p>
+        </div>
+        <div>
+            <select name="tab_resultado" id="tab_resultado" multiple>
+                <option value="1">Digite um número</option>
+                <option value="2">no input acima...</option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+                <option value="7"></option>
+                <option value="8"></option>
+                <option value="9"></option>
+                <option value="10"></option>
+            </select>
+        </div>
+    </section>
+
     <footer id="rodapé">
         <p>&copy; Luiz Carlos Jr.</p>
     </footer>
