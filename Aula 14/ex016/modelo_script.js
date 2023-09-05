@@ -4,23 +4,20 @@
  * Caso um dos campos permaneça vazio, uma mensagem de erro deverá ser mostrada.
  * Caso o passo seja 0, uma mensagem de erro deverá ser mostrada, porém o valor considerado como 1. */
 
-// const botao01 = document.querySelector('#botao01')
-// const botao02 = document.querySelector('#botao02')
-let botao01 = document.getElementsByClassName('botao')[0]
-let botao02 = document.getElementsByClassName('botao')[1]
+var botao01 = document.getElementById('botao01')
+var botao02 = document.getElementById('botao02')
 
-function mouseEntra01() {
-    botao01.style.backgroundImage = 'linear-gradient(to right, #6742bd, #4c67c0)'
-    botao01.style.textDecoration = 'underline'
-} function mouseSai01() {
-    botao01.style.backgroundImage = 'linear-gradient(to right, #8554f7, #5675ff)'
-    botao01.style.textDecoration = null
-} function mouseEntra02() {
-    botao02.style.backgroundImage = 'linear-gradient(to right, #6742bd, #4c67c0)'
-    botao02.style.textDecoration = 'underline'
-} function mouseSai02() {
-    botao02.style.backgroundImage = 'linear-gradient(to right, #8554f7, #5675ff)'
-    botao02.style.textDecoration = null
+function mouseEntra01() {mouseEntraBtn(botao01)}
+function mouseSai01() {mouseSaiBtn(botao01)}
+function mouseEntra02() {mouseEntraBtn(botao02)}
+function mouseSai02() {mouseSaiBtn(botao02)}
+
+function mouseEntraBtn(btn) {
+    btn.style.backgroundImage = 'linear-gradient(to right, #6742bd, #4c67c0)'
+    btn.style.textDecoration = 'underline'
+} function mouseSaiBtn(btn) {
+    btn.style.backgroundImage = 'linear-gradient(to right, #8554f7, #5675ff)'
+    btn.style.textDecoration = null
 }
 
 function execContador() { 
