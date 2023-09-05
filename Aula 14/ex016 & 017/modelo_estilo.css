@@ -33,6 +33,10 @@ input {
     border-radius: 8px;
     font-size: 12pt;
 }
+.botao:hover {
+    background-image: linear-gradient(to right, #6742bd, #4c67c0);
+    text-decoration: underline;
+}
 
 #botao01 { height: 40px; width: 160px; }
 #botao02 { height: 35px; margin-left: 15px; width: 180px;}

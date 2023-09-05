@@ -4,52 +4,41 @@
  * Caso um dos campos permaneça vazio, uma mensagem de erro deverá ser mostrada.
  * Caso o passo seja 0, uma mensagem de erro deverá ser mostrada, porém o valor considerado como 1. */
 
-var botao01 = document.getElementById('botao01')
-var botao02 = document.getElementById('botao02')
-
-function mouseEntra01() {mouseEntraBtn(botao01)}
-function mouseSai01() {mouseSaiBtn(botao01)}
-function mouseEntra02() {mouseEntraBtn(botao02)}
-function mouseSai02() {mouseSaiBtn(botao02)}
-
-function mouseEntraBtn(btn) {
-    btn.style.backgroundImage = 'linear-gradient(to right, #6742bd, #4c67c0)'
-    btn.style.textDecoration = 'underline'
-} function mouseSaiBtn(btn) {
-    btn.style.backgroundImage = 'linear-gradient(to right, #8554f7, #5675ff)'
-    btn.style.textDecoration = null
-}
+const botao01 = document.getElementById('botao01')
+const botao02 = document.getElementById('botao02')
 
 function execContador() { 
     botao01.style.backgroundImage = 'linear-gradient(to right, #5838a3, #3d53b4)'
 
-    let inputInicio = document.getElementById('input_inicio')
-    let inputFim = document.getElementById('input_fim')
-    let inputPasso = document.getElementById('input_passo')
-    let res = document.getElementById('cont_resultado')
-
-    const inicio = Number(inputInicio.value), fim = Number(inputFim.value), passo = Number(inputPasso.value)
-    function calcContador() {
-        res.innerHTML = `Contagem: <br>`
-        for(let n = inicio; n <= fim; n += passo) {
-            res.innerHTML += `${n} 👉 `
-        } res.innerHTML += `🚩`
-    }
+    let inputInicio = document.getElementById('input_inicio').value
+    let inputFim = document.getElementById('input_fim').value
+    let inputPasso = document.getElementById('input_passo').value
 
     res.innerHTML = ``
-    if(inputInicio.value === '' || inputFim.value === '' || inputPasso.value === '') {
+    if(inputInicio === '' || inputFim === '' || inputPasso === '') {
         res.innerHTML = 'Informações incompletas!'
-    } else if(inputPasso.value == 0) {
-        alert(`Valor de passo inválido! \nO passo ${inputPasso.value} foi considerado como 1.`)
-        calcContador();
+    } else if(inputPasso === 0) {
+        alert(`Valor de passo inválido! \nO passo ${inputPasso} foi considerado como 1.`)
+        calcContador(inputInicio, inputFim, 1);
     } else if(inicio > fim && passo > 0) {
         alert(`Valor de passo inválido! Para realizar uma PA com o valor final sendo menor que o inicial, o passo deve ser um número negativo.`)
     } else {
-        calcContador();
+        calcContador(inputInicio, inputFim, inputPasso);
     }
 }
 
+function calcContador(inicio, fim, passo) {
+    let res = document.getElementById('cont_resultado')
+    res.innerHTML = `Contagem: <br>`
+
+    for(let n = inicio; n <= fim; n += passo) {
+        res.innerHTML += `${n} 👉 `
+    } res.innerHTML += `🚩`
+}
+
 function execTabuada() {
+    botao02.style.backgroundImage = 'linear-gradient(to right, #5838a3, #3d53b4)'
+
     let numero = document.querySelector('#input_numero').value
     let resultado = document.querySelector('#tab_resultado')
     let tabuada = [];
