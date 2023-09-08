@@ -51,13 +51,13 @@ function execTabuada()
     let res = document.querySelector('#tab_resultado')
     let tab = [];
 
-    if (num === '' || isNaN(num)) {
+    if (num === '' || isNaN(num)) {s
         alert(`Valor inválido! \nTente novamente, digitando um valor numérico no input.`)
     } else {
         num = Number(num)
         for (let i = 0; i < 10; i++) {
-            let mult = numero * (i + 1)
-            tab.push(`${numero} x ${i + 1} = ${mult}`)
+            let mult = num * (i + 1)
+            tab.push(`${num} x ${i + 1} = ${mult}`)
             res.options[i].text = tab[i];
         }
     }
