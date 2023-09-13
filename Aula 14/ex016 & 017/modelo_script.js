@@ -48,18 +48,26 @@ function execTabuada()
 { /** FUNÇÃO PARA CALCULAR A TABUADA DO VALOR EM #input_numero **/
 
     let num = document.querySelector('#input_numero').value
-    let res = document.querySelector('#tab_resultado')
-    let tab = [];
+    let tab = document.querySelector('#tab_resultado')
+    let txtsel = document.querySelectorAll('.txtsel')
 
-    if (num === '' || isNaN(num)) {s
+    if (num.length == 0 || isNaN(num)) {
         alert(`Valor inválido! \nTente novamente, digitando um valor numérico no input.`)
     } else {
+        txtsel.forEach(option => {
+            option.remove()
+        });
+        
+        tab.innerHTML = ``
         num = Number(num)
+
         for (let i = 0; i < 10; i++) {
-            let mult = num * (i + 1)
-            tab.push(`${num} x ${i + 1} = ${mult}`)
-            res.options[i].text = tab[i];
+            let item = document.createElement('option')
+            let res = num * (i+1)
+
+            item.text = `${num} x ${i + 1} = ${res.toFixed(2)}`
+            // IMPORTANTE PARA O BACK-END!! --> item.value = `tab${i}`
+            tab.appendChild(item)
         }
     }
-
 }
