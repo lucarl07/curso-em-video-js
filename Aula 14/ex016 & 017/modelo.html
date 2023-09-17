@@ -15,13 +15,13 @@
     <section id="contador_PA">
         <div>
             <p>
-                Início: <input type="number" name="inputInicio" id="input_inicio">
+                Início: <input type="number" name="inputInicio" id="input_inicio" placeholder="Primeiro número">
             </p>
             <p>
-                Fim: <input type="number" name="inputFim" id="input_fim">
+                Fim: <input type="number" name="inputFim" id="input_fim" placeholder="Limite da sequência">
             </p>
             <p>
-                Passo: <input type="number" name="inputPasso" id="input_passo">
+                Passo: <input type="number" name="inputPasso" id="input_passo" placeholder="Valor a ser incrementado">
             </p>
             <p class="buttons">
                 <input type="button" value="Calcular sequência" class="botao" id="botao01" onclick="execContador()">
@@ -35,14 +35,12 @@
     <h3>Tabuada até 10:</h3> <section id="contador_TAB">
         <div>
             <p class="buttons">
-                Número: <input type="number" name="input_numero" id="input_numero">
+                Número: <input type="number" name="input_numero" id="input_numero" placeholder="Digite um número aqui...">
                 <input type="button" value="Calcular tabuada" class="botao" id="botao02" onclick="execTabuada()">
             </p>
         </div>
         <div>
             <select name="tab_resultado" id="tab_resultado" multiple>
-                <option class="txtsel">Digite um número</option>
-                <option class="txtsel">no input acima...</option>
             </select>
         </div>
     </section>

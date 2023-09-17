@@ -65,7 +65,19 @@ function execTabuada()
             let item = document.createElement('option')
             let res = num * (i+1)
 
-            item.text = `${num} x ${i + 1} = ${res.toFixed(2)}`
+            function resultadoValidado() {
+                let decimal = res.toString().split('.')[1]
+
+                if (decimal.length > 10) {
+                    return res.toFixed(1)
+                } else if (decimal.length > 3) {
+                    return res.toFixed(3)
+                } else {
+                    return res
+                }
+            } 
+
+            item.text = `${num} x ${i + 1} = ${resultadoValidado()}`
             // IMPORTANTE PARA O BACK-END!! --> item.value = `tab${i}`
             tab.appendChild(item)
         }
