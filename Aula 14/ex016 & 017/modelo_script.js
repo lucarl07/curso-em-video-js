@@ -44,20 +44,19 @@ function execContador()
 
 }
 
+document.querySelector('#input_numero').addEventListener('keydown', (enterExec) => {
+    if(enterExec.code === 'Enter') { execTabuada(); }
+})
+
 function execTabuada() 
 { /** FUNÇÃO PARA CALCULAR A TABUADA DO VALOR EM #input_numero **/
 
     let num = document.querySelector('#input_numero').value
     let tab = document.querySelector('#tab_resultado')
-    let txtsel = document.querySelectorAll('.txtsel')
 
     if (num.length == 0 || isNaN(num)) {
         alert(`Valor inválido! \nTente novamente, digitando um valor numérico no input.`)
     } else {
-        txtsel.forEach(option => {
-            option.remove()
-        });
-        
         tab.innerHTML = ``
         num = Number(num)
 
@@ -65,21 +64,25 @@ function execTabuada()
             let item = document.createElement('option')
             let res = num * (i+1)
 
-            function resultadoValidado() {
-                let decimal = res.toString().split('.')[1]
-
-                if (decimal.length > 10) {
-                    return res.toFixed(1)
-                } else if (decimal.length > 3) {
-                    return res.toFixed(3)
-                } else {
-                    return res
-                }
-            } 
-
-            item.text = `${num} x ${i + 1} = ${resultadoValidado()}`
+            item.text = `${num} x ${i + 1} = ${resultadoValidado(res)}`
             // IMPORTANTE PARA O BACK-END!! --> item.value = `tab${i}`
             tab.appendChild(item)
+        }
+    }
+
+    function resultadoValidado(valor) {
+        let decimal = valor.toString()
+        
+        if (decimal.indexOf(".") >= 0) {
+            decimal = decimal.split('.')[1]
+
+            if (decimal.length > 3) {
+                return valor.toFixed(3)
+            } else {
+                return valor;
+            }
+        } else {
+            return valor;
         }
     }
 }
